@@ -1,0 +1,81 @@
+.homePageWrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  height: 97vh;
+}
+
+.inputGroup{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.inputBox{
+  border-radius: 10px;
+  height: 30px;
+  outline: none;  
+  border: none;
+  background: #eee;
+  font-weight: bold;
+}
+
+.btn{
+  width: 60px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  margin-left: auto;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+
+}
+
+.image-logo{
+  height: 50px;
+  width: 30px;
+ 
+
+}
+.formWrapper{
+  background-color: #282a36;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+}
+
+footer a{
+  color: #4aee88;
+}
+.joinBtn{
+  background-color:#4aed88;
+  width:100px
+}
+.joinBtn:hover{
+  background-color: #2b824c;
+}
+
+.createInfo{
+  margin: auto;
+
+}
+.createNewBtn{
+ color:#4aed88;
+ text-decoration: none;
+ border-bottom: 1px solid #4aed88;
+ transition: all 0.3s ease-in-out;
+}
+.createNewBtn:hover{
+  color: #2b824c;
+  border-color: #2b824c;
+}
+.mainLabel{
+  margin-right: auto;
+}
