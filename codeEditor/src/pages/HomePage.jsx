@@ -5,35 +5,33 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+  const [userName, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [uuid, setUuid] = useState();
   const navigate = useNavigate();
-  const [roomid, setRoomId] = useState("");
-  const [userName, setUserName] = useState("");
-  const createRoom = (e) => {
-    e.preventDefault();
-    const id = uuidv4();
-    console.log(id);
-    setRoomId(id);
-    toast.success("Successfully created!");
+  const id = uuidv4();
+
+  const createRegister = () => {
+    navigate(`/register`);
   };
 
-  const joinRoom = () => {
-    if (!roomid && !userName) {
-      toast.error("RoomId and Username cannot be empty");
-    } else if (!roomid) {
-      toast.error("RoomId cannot be empty");
+  const logIn = () => {
+    setUuid(id);
+    console.log(id);
+    if (!password && !userName) {
+      toast.error("password and Username cannot be empty");
+    } else if (!password) {
+      toast.error("password cannot be empty");
     } else if (!userName) {
       toast.error("Username cannot be empty");
     } else {
-      navigate(`/editor/${roomid}`, {
-        state: {
-          userName,
-        },
-      });
+      toast.success("Login successfull");
+      navigate(`/editor`, { state: { username: userName, userid: uuid } });
     }
   };
   const handleKeyInput = (e) => {
     if (e.code === "Enter") {
-      joinRoom();
+      logIn();
     }
   };
 
@@ -45,31 +43,33 @@ const HomePage = () => {
           src="/logo7-removebg-preview.png"
           alt="logo"
         />
-        <h4 className="mainLabel">Paste Invitation Room Id</h4>
+        <h4 className="mainLabel">
+          Please enter username and password to continue
+        </h4>
         <div className="inputGroup">
           <input
             type="text"
             className="inputBox"
-            placeholder="Room Id"
-            value={roomid}
-            onChange={(e) => setRoomId(e.target.value)}
+            placeholder="Username"
+            value={userName}
+            onChange={(e) => setUsername(e.target.value)}
             onKeyUp={handleKeyInput}
           ></input>
           <input
-            onChange={(e) => setUserName(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
             type="text"
             className="inputBox"
-            placeholder="User name"
-            value={userName}
+            placeholder="Password"
+            value={password}
             onKeyUp={handleKeyInput}
           ></input>
-          <button onClick={joinRoom} className="btn joinBtn">
-            Join
+          <button onClick={logIn} className="btn joinBtn">
+            Login
           </button>
           <span className="createInfo">
-            If you dont have an invite then create &nbsp;{" "}
-            <a onClick={createRoom} href="" className="createNewBtn">
-              New Room
+            If you are a new user &nbsp;{" "}
+            <a onClick={createRegister} href="" className="createNewBtn">
+              Click here
             </a>
           </span>
         </div>

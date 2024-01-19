@@ -1,26 +1,27 @@
-.homePageWrapper{
+.homePageWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
-  height: 97vh;
+  height: 100vh;
+  background-color: #1c1e29;
 }
 
-.inputGroup{
+.inputGroup {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.inputBox{
+.inputBox {
   border-radius: 10px;
   height: 30px;
-  outline: none;  
+  outline: none;
   border: none;
   background: #eee;
   font-weight: bold;
 }
 
-.btn{
+.btn {
   width: 60px;
   height: 30px;
   border: none;
@@ -29,16 +30,13 @@
   cursor: pointer;
   font-weight: bold;
   transition: all 0.3s ease-in-out;
-
 }
 
-.image-logo{
+.image-logo {
   height: 50px;
   width: 30px;
- 
-
 }
-.formWrapper{
+.formWrapper {
   background-color: #282a36;
   padding: 20px;
   border-radius: 10px;
@@ -46,36 +44,103 @@
   max-width: 90%;
 }
 
-footer{
+footer {
   position: fixed;
   bottom: 0;
 }
 
-footer a{
+footer a {
   color: #4aee88;
 }
-.joinBtn{
-  background-color:#4aed88;
-  width:100px
+.btnLeave {
+  background-color: #ff2c2c;
+  width: 100px;
 }
-.joinBtn:hover{
+.joinBtn{
+  background-color:  #4aee88;
+  width: 100px;
+}
+.joinBtn:hover {
   background-color: #2b824c;
 }
-
-.createInfo{
-  margin: auto;
-
+.btnLeave:hover{
+  background-color: #f94449;
 }
-.createNewBtn{
- color:#4aed88;
- text-decoration: none;
- border-bottom: 1px solid #4aed88;
- transition: all 0.3s ease-in-out;
+
+.createInfo {
+  margin-right: auto;
 }
-.createNewBtn:hover{
+.createNewBtn {
+  color: #4aed88;
+  text-decoration: none;
+  
+  border-bottom: 1px solid #4aed88;
+  transition: all 0.3s ease-in-out;
+}
+.createNewBtn:hover {
   color: #2b824c;
   border-color: #2b824c;
 }
-.mainLabel{
+.mainLabel {
   margin-right: auto;
+}
+
+.mainWrap {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  height:100vh;
+}
+.aside {
+  background:#1c1e29;
+  padding: 20px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.asideInner {
+  flex: 1;
+}
+.clientList {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.client {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-weight: bold;
+}
+
+.btnLeave{
+  width: 100%;
+  margin-top: 20px;
+  font-weight: bold;
+}
+.btnCopy{
+  width:100%;
+  font-weight: bold;
+  background-color: #4aed88;
+}
+.CodeMirror{
+  /* height: auto; */
+  font-size: 20px;
+  line-height: 1.6;
+  padding-top: 20px;
+}
+.editorWrap{
+  height: 100%;
+  width: 100%;
+  background-color: #4aed88;
+}
+
+.textEditor {
+  width: 100%;
+  height: 100%;
+}
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
 }

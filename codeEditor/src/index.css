@@ -1,7 +1,8 @@
 body {
-  background-color: #1c1e29;
+  /* background-color: #1c1e29; */
+  margin: 0;
 }
-.image-logo.image-logo {
+.image-logo {
   margin-top: auto;
   width: 200px;
 }
