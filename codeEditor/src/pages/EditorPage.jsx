@@ -22,7 +22,7 @@ const EditorPage = () => {
           <h3>Connected</h3>
           <div className="clientList">
            
-              <Client key={userid} username={username} />
+              <Client userid={userid} username={username} />
             
           </div>
         </div>

@@ -1,34 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../App.css";
 import { v4 as uuidv4 } from "uuid";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+    
   const [userName, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [uuid, setUuid] = useState();
   const navigate = useNavigate();
-  const id = uuidv4();
 
   const createRegister = () => {
     navigate(`/register`);
   };
 
   const logIn = () => {
-    setUuid(id);
-    console.log(id);
-    if (!password && !userName) {
-      toast.error("password and Username cannot be empty");
-    } else if (!password) {
-      toast.error("password cannot be empty");
-    } else if (!userName) {
-      toast.error("Username cannot be empty");
-    } else {
-      toast.success("Login successfull");
-      navigate(`/editor`, { state: { username: userName, userid: uuid } });
-    }
-  };
+  const id = uuidv4();
+  setUuid(id); 
+
+  console.log(id);
+
+  if (!password && !userName) {
+    toast.error("password and Username cannot be empty");
+  } else if (!password) {
+    toast.error("password cannot be empty");
+  } else if (!userName) {
+    toast.error("Username cannot be empty");
+  } else {
+    toast.success("Login successful");
+    navigate(`/editor`, { state: { username: userName, userid: id } });
+  }
+};
   const handleKeyInput = (e) => {
     if (e.code === "Enter") {
       logIn();
